@@ -1,78 +1,43 @@
-.TH SHELL 1 "27 November 2019" GNU "Shell man page"
+.TH man 1 "16 Nov 2022" "0.1" "simple_shell man page"
+
 .SH NAME
-.B hsh
-- Command line interpreter (shell)
+.B simple_shell
+- Simple shell create in C to interact with a linux operating system.
+
 .SH SYNOPSIS
-The shell is executed by typing ./hsh
-.br
-Then, it will wait for an input such as : command [arguments] [other]
+ hsh [options] [file]
+
 .SH DESCRIPTION
-This shell is a project dedicated to our studies. My partner and I, have tried to mimic the behavior of a real shell. In case you don't know what a shell is (I doubt that) here is a brief explanation. A shell is a command language interpreter that executes commands read from the standard input or from a file. Our shell does not support the arguments passed to it, yet. We are still working on it.
-.br
-.B What hsh can do :
-.br
-- Executes any command with its arguments
-.br
-- Executes built-in commands
-.br
-- Handle pipes
-.br
-- Handle the command seperator ;
-.br
-- Handle && and || logical operators
-.br
-- handle variable replacement
-.br
-- handle the $? variable
-.br
-- handle the $$ variable
-.SH BUILT-IN FUNCTIONS
-Those are the available built-in functions :
-.br
- - exit : exit the shell
-.br
- - cd : Change Directory
-.br
- - help : Display the help page
-.br
- - history : Display history of commands used
-.br
- - alias : Put an alias for a command
-.br
- - env : Display the environment variables
+Shell is a UNIX term for the interactive user interface with an operating system. The shell is the layer of programming that understands
+and executes the commands a user enters. In some systems, the shell is called a command interpreter. A shell usually implies an interface
+with a command syntax 
+
+.B Overview
+
+The simple shell is a command that reads lines from either a file or the terminal, interprets them, and generally executes other commands. It is the program that is started when a user logs into the system. It incorporates many features to aid interactive use and has the advantage that the interpretative language is common to both interactive and non-interactive use (shell scripts). That is, commands can be typed directly to the running simple shell or can be put into a file, which can be executed directly by the simple shell.
+.SH Return Value
+
+Always 0 for success, other number means failure.
+
+.SH PATH
+
+It will look inside al directions in PATH env variable for executable.
+
+.SH
+
 .SH OPTIONS
-There are no options for the moment.
-.SH EXIT STATUS
-The exit value depends on how a function has terminated. Every error is identified by a certain value. On success it will always return 0.
-.SH RETURN VALUE
-Return 0 on success, otherwise it will return the exit value.
-.SH ENVIRONMENT
-- PATH
-.br
-- $?
-.br
-- $$
-.SH BUGS
-There is no known bugs at the moment.
+.B simple_shell
+Command options will be typed after the main command followed by a space and a
+ '-' symbol.
+
 .SH EXAMPLE
-.B Two ways to execute our shell :
-.br
-.B The intercative mode :
-.br
- $ ./hsh
-.br
- #cisfun$ /bin/ls
-.br
- hsh main.c shell.c
-.br
- #cisfun$ exit
-.br
- $
-.br
-.B The non-interactive mode :
-.br
- $ echo "/bin/ls" | ./hsh
-.br
- hsh main.c shell.c
-.SH AUTHORS
-Mariem Matri, Inès Chokri
+
+[command] [options]
+$ ls -l
+
+.SH BUGS
+Single space required after argument.
+
+
+.SH AUTHOR
+Godswill Kalu, Vatalis Ibeh.
